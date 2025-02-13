@@ -1,2 +1,3 @@
 rootProject.name = 'Java_C34-onl'
+include 'lesson5-arrays'
 
