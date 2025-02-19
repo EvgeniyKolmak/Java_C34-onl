@@ -7,9 +7,9 @@ public class Main {
 
         int[] arr = {1,2,3};
 
-        Arrays.fill(arr, -10);
-
-        System.out.println(Arrays.toString(arr));
+//        Arrays.fill(arr, -10);
+//
+//        System.out.println(Arrays.toString(arr));
 
 //        int [][] arr = new int[3][];
 //
