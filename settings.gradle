@@ -2,4 +2,5 @@ rootProject.name = 'Java_C34-onl'
 include 'lesson5-arrays'
 include 'lesson6-classes'
 include 'lesson7-classes2'
+include 'lesson8-oop'
 
