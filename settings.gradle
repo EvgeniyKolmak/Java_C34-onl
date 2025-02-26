@@ -3,4 +3,5 @@ include 'lesson5-arrays'
 include 'lesson6-classes'
 include 'lesson7-classes2'
 include 'lesson8-oop'
+include 'lesson9-static'
 
