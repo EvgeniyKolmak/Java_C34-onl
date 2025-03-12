@@ -7,4 +7,5 @@ include 'lesson9-static'
 include 'lesson10-objs'
 include 'lesson11-exc'
 include 'lesson12-io'
+include 'lesson13-thread'
 
