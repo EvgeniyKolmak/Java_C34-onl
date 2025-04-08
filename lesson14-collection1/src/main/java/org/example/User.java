@@ -27,7 +27,7 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        return o.getLogin().length() - login.length();
+        return 0;
     }
 }
 // hashcode

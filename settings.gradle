@@ -9,4 +9,6 @@ include 'lesson11-exc'
 include 'lesson12-io'
 include 'lesson13-thread'
 include 'lesson14-collection1'
+include 'lesson15-generic'
+include 'lesson16-lambda'
 

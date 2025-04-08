@@ -1,8 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MainList {
@@ -10,7 +8,7 @@ public class MainList {
 
         List<String> strList = new ArrayList<>();
 
-        strList.add("Hello");
+        strList.add("sdada");
         strList.add("World");
         strList.add("el1");
         strList.add("el2");
@@ -26,6 +24,8 @@ public class MainList {
         strList.add("el4");
         strList.add("el3");
         strList.add("el4");
+
+        String s = strList.get(1);
 
         strList.add(1, "My");
         strList.remove(0);

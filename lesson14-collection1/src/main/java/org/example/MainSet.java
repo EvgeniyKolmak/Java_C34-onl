@@ -9,6 +9,8 @@ public class MainSet {
 
     public static void main(String[] args) {
 
+        String text;
+
         User user1 = new User("user1",  "qwerty1");
         User user2 = new User("user22",  "qwerty2");
         User user3 = new User("user333",  "qwerty3");
@@ -17,7 +19,7 @@ public class MainSet {
         User user6 = new User("user666666",  "qwerty6");
         User user7 = new User("user666666",  "qwerty7");
 
-        Set<User> set = new TreeSet<>();
+        Set<User> set = new HashSet<>();
         set.add(user1);
         set.add(user2);
         set.add(user3);
