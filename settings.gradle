@@ -11,4 +11,5 @@ include 'lesson13-thread'
 include 'lesson14-collection1'
 include 'lesson15-generic'
 include 'lesson16-lambda'
+include 'lesson17-stream'
 
