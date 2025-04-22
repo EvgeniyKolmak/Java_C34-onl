@@ -13,4 +13,5 @@ include 'lesson15-generic'
 include 'lesson16-lambda'
 include 'lesson17-stream'
 include 'lesson18-stream9'
+include 'lesson20-jdbc'
 
