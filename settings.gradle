@@ -15,3 +15,7 @@ include 'lesson17-stream'
 include 'lesson18-stream9'
 include 'lesson20-jdbc'
 
+
+include 'lesson-29-patterns'
+include 'lesson30-patterns2'
+include 'lesson32-hibernate'

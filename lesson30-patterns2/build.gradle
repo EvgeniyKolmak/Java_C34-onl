@@ -19,5 +19,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-// HTTP GET /home/users/profile?par1=asdasd&par2=asdasda
