@@ -1,6 +1,9 @@
 package org.example.config;
 
+import org.example.entity.AddressEntity;
 import org.example.entity.PersonEntity;
+import org.example.entity.PhoneEntity;
+import org.example.entity.CarEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -16,12 +19,15 @@ public class HibernateFactory {
         properties.put("hibernate.connection.password", "postgres");
         properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 
-        properties.put("hibernate.hbm2ddl.auto", "create-drop");
+        properties.put("hibernate.hbm2ddl.auto", "none");
         properties.put("hibernate.show_sql", "true");
         properties.put("hibernate.format_sql", "true");
 
         var configuration = new Configuration()
                 .addAnnotatedClass(PersonEntity.class)
+                .addAnnotatedClass(AddressEntity.class)
+                .addAnnotatedClass(PhoneEntity.class)
+                .addAnnotatedClass(CarEntity.class)
                 .addProperties(properties);
 
         return configuration
