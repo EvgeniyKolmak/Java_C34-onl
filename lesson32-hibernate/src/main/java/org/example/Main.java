@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.dto.SearchDto;
 import org.example.entity.CarEntity;
 import org.example.entity.PersonEntity;
 import org.example.service.AddressService;
@@ -7,6 +8,7 @@ import org.example.service.CarService;
 import org.example.service.PersonService;
 import org.example.service.PhoneService;
 
+import java.util.List;
 import java.util.UUID;
 
 public class Main {
@@ -18,9 +20,20 @@ public class Main {
 
     public static void main(String[] args) {
 
+        SearchDto searchDto = new SearchDto("user3", "test1", null, null);
+
+        System.out.println(service.search(searchDto));
+
+//        System.out.println(names);
+
+//        var user1 = service.findUpdatedUser();
+//        System.out.println(user1);
+
+//        System.out.printf("Count: " + service.count());
+
 //        var car = carService.findById(UUID.fromString("bb429f7e-ebab-43fc-baf9-e80d9eda0f23"));
 
-        PersonEntity person = new PersonEntity("test10", "test2");
+//        PersonEntity person = new PersonEntity("test10", "test2");
 
 //        person.addCar(car);
 
@@ -43,7 +56,7 @@ public class Main {
 
 //        var byId = service.findById(UUID.fromString("e5c3ac8b-6926-4156-91a0-a175c0f0a9b7"));
 
-        service.updatePassword(UUID.fromString("4cfac9e3-ee6d-4554-b77a-cd8b950bf671"), "testPass11");
+//        service.updatePassword(UUID.fromString("4cfac9e3-ee6d-4554-b77a-cd8b950bf671"), "testPass11");
 
 //        var byId = service.findById(UUID.fromString("eadda26a-cf5c-4739-9ce2-5fec11962a35"));
 

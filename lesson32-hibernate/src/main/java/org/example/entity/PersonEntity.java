@@ -61,4 +61,15 @@ public class PersonEntity {
         cars.add(car);
         car.getPersons().add(this);
     }
+
+//    @PrePersist
+//    public void doBeforePersist() {
+//        System.out.println("doBeforePersist");
+//    }
+//
+//    @PostPersist
+//    public void doAfterPersist() {
+//        System.out.println("doAfterPersist");
+//    }
+
 }
