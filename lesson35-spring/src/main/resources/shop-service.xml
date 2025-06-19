@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="userService" class="org.example.service.impl.UserServiceImpl" autowire="constructor" scope="singleton" depends-on="testService"
+    init-method="runMe" destroy-method="destroyMe">
+<!--        <constructor-arg name="notificationService" ref="notification2"/>-->
+        <property name="tstSrv" ref="testService"/>
+    </bean>
+
+    <bean name="notification1" class="org.example.service.impl.TelegramNotificationImpl" primary="true" scope="prototype"/>
+    <bean name="notification2" class="org.example.service.impl.ViberNotificationServiceImpl" scope="prototype" destroy-method="destroyMe"/>
+
+    <bean name="testService" class="org.example.service.impl.TestServiceImpl" autowire="constructor" scope="singleton"/>
+
+    <bean class="org.example.service.UserBeanPostProcessor"/>
+
+
+</beans>
