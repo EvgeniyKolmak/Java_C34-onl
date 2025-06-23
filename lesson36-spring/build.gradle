@@ -10,9 +10,11 @@ repositories {
 }
 
 dependencies {
-    implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")
     compileOnly("org.projectlombok:lombok:1.18.38")
     annotationProcessor("org.projectlombok:lombok:1.18.38")
+    implementation 'org.mapstruct:mapstruct:1.6.3'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+    implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")
     implementation("org.springframework:spring-context:6.2.8")
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'

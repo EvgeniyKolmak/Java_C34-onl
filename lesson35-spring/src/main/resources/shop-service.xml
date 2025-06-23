@@ -9,8 +9,12 @@
         <property name="tstSrv" ref="testService"/>
     </bean>
 
-    <bean name="notification1" class="org.example.service.impl.TelegramNotificationImpl" primary="true" scope="prototype"/>
-    <bean name="notification2" class="org.example.service.impl.ViberNotificationServiceImpl" scope="prototype" destroy-method="destroyMe"/>
+    <bean name="notification1" class="org.example.service.impl.TelegramNotificationImpl" primary="true" scope="prototype" />
+
+
+    <bean name="notification2" class="org.example.service.impl.ViberNotificationServiceImpl" scope="prototype" destroy-method="destroyMe" factory-bean=""/>
+
+
 
     <bean name="testService" class="org.example.service.impl.TestServiceImpl" autowire="constructor" scope="singleton"/>
 
