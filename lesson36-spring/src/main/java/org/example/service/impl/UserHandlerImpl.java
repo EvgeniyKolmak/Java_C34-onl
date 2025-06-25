@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.example.config.Timer;
 import org.example.domain.UserDto;
 import org.example.mapper.UserMapper;
 import org.example.service.*;
@@ -18,20 +19,24 @@ public class UserHandlerImpl implements UserHandler {
     private final Map<String, NotificationService> notificationService;
     private final UserMapper userMapper;
     private final SecurityAccountService securityAccountService;
+    private final LogoutService logoutService;
 
     public UserHandlerImpl(ValidationService validationService,
                            @Lazy DataService dataService,
                            Map<String, NotificationService> notificationService,
                            UserMapper userMapper,
-                           @Autowired(required = false) SecurityAccountService securityAccountService) {
+                           @Autowired(required = false) SecurityAccountService securityAccountService,
+                           LogoutService logoutService) {
         this.validationService = validationService;
         this.dataService = dataService;
         this.notificationService = notificationService;
         this.userMapper = userMapper;
         this.securityAccountService = securityAccountService;
+        this.logoutService = logoutService;
     }
 
     @Override
+    @Timer
     public void register(UserDto user) {
 
         var isCorrect = validationService.validate(user);

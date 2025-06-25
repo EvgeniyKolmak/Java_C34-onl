@@ -4,6 +4,6 @@ import org.example.domain.UserDto;
 
 public interface ValidationService {
 
-    boolean validate(UserDto user);
+    Boolean validate(UserDto user);
 
 }

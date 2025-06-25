@@ -1,5 +1,6 @@
 package org.example.service.impl;
 
+import org.example.config.Timer;
 import org.example.service.NotificationService;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 @DependsOn("validationServiceImpl")
 public class NotificationServiceImpl implements NotificationService {
     @Override
+    @Timer
     public void sendMessage(String username) {
         System.out.printf("Wellcome to our company. User %s\n", username);
     }

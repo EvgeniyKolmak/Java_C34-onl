@@ -6,8 +6,4 @@ public interface DataService {
 
     void save(UserEntity user);
 
-    void initDbConnection();
-
-    void closeDbConnection();
-
 }

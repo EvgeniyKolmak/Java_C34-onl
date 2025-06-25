@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.config.TestConfiguration;
 import org.example.domain.UserDto;
-import org.example.service.B;
-import org.example.service.DataService;
 import org.example.service.UserHandler;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,13 +11,11 @@ public class Main {
 
         UserDto userDto = new UserDto("vasya", "qwerty", 20);
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TestConfiguration.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("org.example");
         context.registerShutdownHook();
 
+        var handler = context.getBean(UserHandler.class);
 
-
-        var handler = context.getBean(B.class);
-
-//        handler.register(userDto);
+        handler.register(userDto);
     }
 }
