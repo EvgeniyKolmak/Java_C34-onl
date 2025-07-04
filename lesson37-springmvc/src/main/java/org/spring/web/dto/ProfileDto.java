@@ -1,16 +1,13 @@
-package org.example.entity;
+package org.spring.web.dto;
 
 import lombok.*;
 
-import java.util.UUID;
-
-@Setter @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter @Setter
 @ToString
-public class UserEntity {
+public class ProfileDto {
 
-    private Long id;
     private String login;
     private String password;
     private Integer age;

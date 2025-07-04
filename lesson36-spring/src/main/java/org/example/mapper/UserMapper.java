@@ -13,7 +13,7 @@ public interface UserMapper {
     @Mapping(target = "age", source = "user.age")
     @Mapping(target = "login", source = "user.username")
     @Mapping(target = "password", source = "user.password")
-    @Mapping(target = "id", expression = "java(UUID.randomUUID())")
+    @Mapping(target = "id", ignore = true)
     UserEntity toEntity(UserDto user);
 
 }
