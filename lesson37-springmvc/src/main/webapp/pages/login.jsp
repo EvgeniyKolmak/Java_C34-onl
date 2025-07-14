@@ -12,12 +12,11 @@
 </head>
 <body>
 
-Hello from spring mvc!!!
-
 <form method="post" action="/home/profile">
-    Login: <input type="text" name="login"><br>
-    Password: <input type="password" name="password"><br>
-    <input type="submit">
+    Login: <input type="text" name="login" value="${login}"> ${loginError}<br>
+    Password: <input type="password" name="password" value="${password}"> ${passwordError}<br>
+    Age: <input type="number" name="age" value="${age}"> ${ageError}<br>
+    <input type="submit" value="Register">
 
 </form>
 
