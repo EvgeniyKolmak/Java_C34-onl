@@ -1,5 +1,6 @@
 package org.spring.web.config;
 
+import jakarta.servlet.MultipartConfigElement;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -14,8 +15,11 @@ public class ServletConfiguration implements WebApplicationInitializer {
 
         var dispatcherServlet = new DispatcherServlet(context);
 
-        servletContext.addServlet("dispatcher", dispatcherServlet)
+        var dispatcher = servletContext.addServlet("dispatcher", dispatcherServlet);
+        dispatcher
                 .addMapping("/");
+
+        dispatcher.setMultipartConfig(new MultipartConfigElement("/avatar"));
 
     }
 
