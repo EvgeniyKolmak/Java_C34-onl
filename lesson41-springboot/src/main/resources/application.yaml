@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+app:
+  bet:
+    min: 10
+    max: 100
+  username: Person
+  notification:
+    enabled: true
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

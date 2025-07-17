@@ -16,10 +16,12 @@ public class ServletConfiguration implements WebApplicationInitializer {
         var dispatcherServlet = new DispatcherServlet(context);
 
         var dispatcher = servletContext.addServlet("dispatcher", dispatcherServlet);
+
+        var multipartConfigElement = new MultipartConfigElement("/tmp", 90*1024*1024, 2*90*1024*1024, 90*1024*1024/2);
+        dispatcher.setMultipartConfig(multipartConfigElement);
+
         dispatcher
                 .addMapping("/");
-
-        dispatcher.setMultipartConfig(new MultipartConfigElement("/avatar"));
 
     }
 
