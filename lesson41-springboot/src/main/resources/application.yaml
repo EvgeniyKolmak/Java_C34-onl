@@ -11,6 +11,8 @@ app:
   notification:
     enabled: true
 spring:
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     url: jdbc:postgresql://127.0.0.1:5432/postgres
     username: postgres

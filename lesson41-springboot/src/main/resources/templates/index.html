@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+[[${text}]]
+<br>
+[(${text})]
+
+<!--<div th:text="${text}"></div>-->
+<div th:text="${@infoService.phone()}"></div>
+
+<form th:action="@{/info}" method="post" th:object="${user}">
+    <input type="text" th:field="*{name}"><p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect date</p><br>
+    <input type="number" th:field="*{age}"><p th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Incorrect date</p><br>
+    <input type="submit" value="Submit">
+</form>
+
+<!--<a th:href = "@{/info/{param}(param=${user.getId()}, param2=${user.getId()})}">INFO</a>-->
+<!--  /info?param=dasdasdasd -->
+
+<!-- /info/ashdgashjgdahsjgdjhsaghj -->
+
+<!--<div th:insert="part/top_part :: top"></div>-->
+
+<!--<a href="?lang=ru">RU</a> | <a href="?lang=en">EN</a>-->
+
+<!--<a href="info">INFO</a>-->
+
+<!--<h2 th:text="#{label.title}"/>-->
+
+<!--<ul>-->
+<!--    <li th:each="user : ${user_list}">-->
+<!--        <p th:text="${user.getName()} + ' : ' + ${user.getAge()}"/>-->
+<!--    </li>-->
+<!--</ul>-->
+
+<!--<div th:insert="~{part/top_part :: form}"></div>-->
+
+<!--<div th:text="${div_content}">AAAAA</div>-->
+<!--<p th:text="${user_info.name}"/>-->
+<!--<p th:text="${user_info.getAge()}"/>-->
+<!--<p th:text="${user_info['name']}"/>-->
+<!--<p th:text="${ 5 > 3}"/>-->
+<!--<p th:text="${ 5 + 3}"/>-->
+<!--<p th:text="${ 5 lt 3}"/>-->
+
+<!--<p th:text="${user_list[0].getName()}"/>-->
+
+<!--<p th:text="${map_users['admin'].getName()}"/>-->
+<!--<p th:text="${map_users.manager.getName()}"/>-->
+
+<!--<hr/>-->
+
+<!--<div th:if="${user_data.getType()}">-->
+<!--    Hello my dear Admin <a href="http://google.ru">link to google</a>-->
+<!--</div>-->
+
+<!--<div th:switch="${app_type}">-->
+
+<!--    <p th:case="1">We are 1</p>-->
+<!--    <p th:case="2">We are 2</p>-->
+<!--    <p th:case="3">We are 3</p>-->
+<!--    <p th:case="*">We are unknown</p>-->
+<!--</div>-->
+
+</body>
+</html>

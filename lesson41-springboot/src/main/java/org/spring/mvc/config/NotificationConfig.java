@@ -21,17 +21,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @RequiredArgsConstructor
 public class NotificationConfig {
 
-//    @Autowired
-//    private ViewResolver viewResolver;
-
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("pages/");
-        viewResolver.setSuffix(".jsp");
-        return  viewResolver;
-    }
-
     @Bean
     public NotificationService notificationService() {
         return new NotificationServiceImpl();
