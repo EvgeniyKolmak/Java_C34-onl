@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/person" method="post">
+
+  Login: <input type="text" name="login"><br>
+  Password: <input type="password" name="password"><br>
+  Age: <input type="number" name="age"><br>
+    City: <input type="text" name="city"><br>
+    Street: <input type="text" name="street"><br>
+
+  <input type="submit" value="Save"><br>
+
+</form>
+
+<hr>
+
+<form action="/person/search" method="post">
+    Search login: <input type="text" name="login"><br>
+    Search password: <input type="text" name="password"><br>
+    Search age from: <input type="number" name="from"><br>
+    Search age to: <input type="number" name="to"><br>
+    <input type="submit" value="find">
+</form>
+
+<hr>
+
+<ul>
+    <li th:each="item : ${persons}"><h4 th:text="${item.getLogin()} + ' : ' + ${item.getAge()}"/> </li>
+</ul>
+
+</body>
+</html>
