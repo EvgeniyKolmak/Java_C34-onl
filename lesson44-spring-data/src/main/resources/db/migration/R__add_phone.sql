@@ -1,0 +1,1 @@
+insert into phones (id, number) values (gen_random_uuid(), 1234567890) ;

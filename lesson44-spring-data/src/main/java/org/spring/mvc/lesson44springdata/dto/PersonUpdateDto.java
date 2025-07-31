@@ -5,23 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter
-public class PersonDto {
+public class PersonUpdateDto {
 
-    private UUID id;
     private String login;
     private String password;
-    private Integer age;
 
-    private String city;
-    private String street;
-
-    public PersonDto(String login, Integer age) {
-        this.login = login;
-        this.age = age;
-    }
 }

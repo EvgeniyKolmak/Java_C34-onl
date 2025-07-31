@@ -1,7 +1,10 @@
 package org.spring.mvc.lesson44springdata.repository;
 
+import jakarta.transaction.Transactional;
 import org.spring.mvc.lesson44springdata.domain.PersonEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -9,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface PersonRepository extends JpaRepository<PersonEntity, UUID> {
+public interface PersonRepository extends JpaSpecificationExecutor<PersonEntity>, JpaRepository<PersonEntity, UUID> {
 
 //    List<PersonEntity> findByLogin(String login);
 
@@ -26,9 +29,11 @@ public interface PersonRepository extends JpaRepository<PersonEntity, UUID> {
 
     List<PersonEntity> findByLoginAndPasswordAndAgeBetweenOrderByAgeDesc(String login, String password, Integer from, Integer to);
 
+    List<PersonEntity> findByLoginOrPasswordOrAgeBetweenOrderByAgeDesc(String login, String password, Integer from, Integer to);
+
     Optional<PersonEntity> findByLogin(String login);
 
-    @Query(value = "from PersonEntity where login = :login and password = :pass order by age desc ")
+    @Query(value = "from PersonEntity where login = :login and password = :pass order by age desc")
     List<PersonEntity> findSomePersons(String login, String pass);
 
     @Query(value = "select * from persons where login = :login and password = :pass", nativeQuery = true)
@@ -36,5 +41,21 @@ public interface PersonRepository extends JpaRepository<PersonEntity, UUID> {
 
     List<PersonEntity> findSomePersonsNamedQuery(String login, String pass);
 
+    @Transactional
+    @Modifying
+    @Query("update PersonEntity set password = :pass where login = :login")
+    int updatePassword(String login, String pass);
+
+    int countByPassword(String pass);
+
+    boolean existsByPassword(String pass);
+
+    interface PersonSimpleView {
+        String getLogin();
+        Integer getAge();
+        UUID getId();
+    }
+
+    List<PersonSimpleView> findAllBy();
 
 }

@@ -1,7 +1,6 @@
 package org.spring.mvc.lesson44springdata.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,21 +8,21 @@ import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
-@Table(name = "addres")
 @Entity
-@AllArgsConstructor
+@Table(name = "phones")
 @Getter @Setter
-public class AddresEntity {
+public class PhoneEntity {
 
     @Id
     @UuidGenerator
     private UUID id;
 
-    @Column(nullable = false)
-    private String city;
-    @Column(nullable = false)
-    private String street;
+    private Long number;
 
-    public AddresEntity() {
+    @JoinColumn(name = "person_id")
+    @ManyToOne
+    private PersonEntity person;
+
+    public PhoneEntity() {
     }
 }
