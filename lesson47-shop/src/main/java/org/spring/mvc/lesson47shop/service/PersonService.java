@@ -6,4 +6,5 @@ public interface PersonService {
 
     PersonDto create(PersonDto personDto);
 
+    PersonDto findByLogin(String login);
 }

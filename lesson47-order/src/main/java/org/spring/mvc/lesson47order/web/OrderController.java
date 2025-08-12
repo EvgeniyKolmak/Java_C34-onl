@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.spring.mvc.lesson47order.dto.OrderDto;
 import org.spring.mvc.lesson47order.service.OrderService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestClient;
 
 import java.util.List;
 import java.util.UUID;
