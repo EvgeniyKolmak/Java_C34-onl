@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-Home Page
+
+Login
+
+<form method="post" th:action="@{/my-login}">
+
+    Username: <input type="text" name="login"><br>
+    Password: <input type="password" name="cred"><br>
+    <input type="submit" value="login">
+
+</form>
+
+Logout
+<form th:action="@{/my-logout}" method="post">
+    <input type="submit" value="Logout">
+</form>
+
+<a th:href="@{/user}">USER PAGE</a>
+<a th:href="@{/admin}">ADMIN PAGE</a>
+
 </body>
 </html>
