@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+    container_name: user-bl
+    environment:
+      spring.datasource.url: jdbc:postgresql://mydb:5432/persons
+    ports:
+      - "8080:8081"
+    depends_on:
+      - mydb
+    networks:
+      - app-network
+  mydb:
+    image: postgres:17.5
+    container_name: mydb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: persons
+    ports:
+      - "5433:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
